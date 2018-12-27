@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--
+  Hang-Man Game by Ryan D. Wilson
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * unsafe-inline; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <!--<link rel="stylesheet" type="text/css" href="css/8bit.css">-->
+    <title>Hang-Man</title>
+
+
+
+   
+
+
+    <script type="text/javascript" src="scripts/GameController.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+
+
+</head>
+<body>
+
+    <audio id='gamemusic' loop="loop" autoplay="autoplay">
+        <source src="music/titlemusic.mp3" type="audio/mpeg" />
+    </audio>
+
+
+
+    <div id="title">
+        <img id="titlePic" src="images/Hang-Man.png" />
+    </div>
+
+    <!--Account Creation-->
+    <div id="accountCreation" class="hidden">
+        <h1>Create New Account</h1>
+
+        <label for="txtUser">Username</label>
+        <input id="txtUser" class="enjoy-css" type="text" placeholder="User Name" />
+        <label for="txtPass">Password</label>
+        <input id="txtPass" class="enjoy-css" placeholder="Password" type="password" />
+        <button id="btncreateAccount" class="purpleButton">Create</button>
+
+
+    </div>
+    <!--Main menu once signed in. Shows Game and Rankings options-->
+    <div id="mainMenu" class="hidden">
+        <button id="btnViewPlay" class="purpleButton">Play</button>
+        <button id="btnViewRanks" class="purpleButton">Rankings</button>
+        <img id="leftTorch" class="torch" src="images/animted_torch_by_captaintoog-d6bfzx3.gif" />
+        <img id="rightTorch" class="torch" src="images/animted_torch_by_captaintoog-d6bfzx3.gif" />
+        <!--<img id="rope" src="images/rope.png" />-->
+      
+    </div>
+
+    <!--A List of selectable Categories for the Rankings -->
+    <div id="rankingsList" class="hidden">
+
+
+    </div>
+    <!--Leaderboard for a Category-->
+    <div id="leaderBoardDiv" class="hidden">
+        <h1 id="leaderBoardTitle"></h1>
+        <table id="leaderboard"></table>
+
+        <button id="leaderHome" class="purpleButton">Home</button>
+    </div>
+
+    <!--A List of selectable Categories for the Game -->
+    <div id="gameList" class="hidden">
+      
+    </div>
+
+
+
+    <!--The Game Itself-->
+    <div id="game" class="hidden">
+        <span id="guessesRemaining">0</span>
+        <span id="dashes"></span>
+        <div id="gallow">
+            <img id="stickman" src="images/gallow.png" />
+        </div>
+        <div id="letters"></div>
+
+    </div>
+
+    <!--Win Screen-->
+    <div id="winScreen" class="hidden">
+        <img src="images/happyCat.png" />
+        <h1>You Won!</h1>
+        <h1 id="won">Your ranking in this category has Increased!</h1>
+        <button id="homeWin" class="purpleButton">Home</button>
+    </div>
+
+    <!--Lost Screen-->
+    <div id="loseScreen" class="hidden">
+        <img src="images/sadCat.png" />
+        <h1>You Lost!</h1>
+        <h1 id="lost">Your ranking in this category has Decreased!</h1>
+        <button id="homeLose" class="purpleButton">Home</button>
+    </div>
+
+
+    <div id="gradiant">
+
+
+
+    </div>
+
+
+</body>
+</html>
